@@ -147,9 +147,9 @@ def train_and_predict():
     print("Fitting Model")
     print("-"*30)
 
-    # model.fit(imgs_train, imgs_mask_train, batch_size=32, epochs=20, verbose=1, shuffle=True,
-    #           validation_split=0.2,
-    #           callbacks=[checkpoint])
+    model.fit(imgs_train, imgs_mask_train, batch_size=32, epochs=20, verbose=1, shuffle=True,
+              validation_split=0.2,
+              callbacks=[checkpoint])
 
     print("-"*30)
     print("Loading and preprocessing test data ...")
@@ -183,7 +183,9 @@ def train_and_predict():
     
     for image, image_id in zip(imgs_mask_test, imgs_id_test):
         image = (image[:, :, 0] * 255.).astype(np.uint8)
-        imsave(os.path.join(pred_dir, str(image_id) + '_pred.png') , image)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            imsave(os.path.join(pred_dir, str(image_id) + '_pred.png') , image)
 
 if __name__ == '__main__':
     train_and_predict()
