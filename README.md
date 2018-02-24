@@ -4,7 +4,7 @@ Code for Kaggle competition, Ultrasound Nerve Segmentation more details can be f
 
 ### Overview
 
-Architecture used is U-Net: Convolutional Networks for Biomedical Image Segmentation more details [here](arxiv.org/abs/1505.04597)
+Architecture used is U-Net: Convolutional Networks for Biomedical Image Segmentation more details [here](https://arxiv.org/pdf/1505.04597.pdf)
 ![Unet](https://github.com/4rshdeep/nerve-segmentation/blob/master/img/u-net-architecture.png)
 
 ### Data
